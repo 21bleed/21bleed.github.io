@@ -1,0 +1,141 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* LCD-font */
+@font-face {
+    font-family: lcd;
+    src: url(../font/SUBWT___.ttf);
+}
+
+/* Root size */
+html {
+    font-size: 62.5%;
+}
+
+/* Body styling */
+body {
+    background-color: #1e1e2f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 2rem;
+    color: #fff;
+}
+
+/* Main container */
+main {
+    background: #2a2a40;
+    padding: 2rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 100%;
+    max-width: 40rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Display */
+main input {
+    width: 100%;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    background-color: #121212;
+    color: #39ff14;
+    text-align: right;
+    padding: 1rem;
+    font-family: lcd, monospace;
+    border: 1px solid #39ff14;
+    border-radius: 0.8rem;
+}
+
+/* Keyboard grid */
+main section#keyBoard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.7rem;
+}
+
+/* Button styles */
+button {
+    background-color: #3b3b52;
+    border: none;
+    padding: 1.5rem;
+    font-size: 2.6rem;
+    color: #f1f1f1;
+    cursor: pointer;
+    border-radius: 0.7rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #4c4c6d;
+    transform: scale(1.03);
+}
+
+/* Operator and enter buttons */
+button#add,
+button#sub,
+button#mul,
+button#div,
+button#enter {
+    background-color: #5c67f2;
+    color: white;
+}
+
+button#add:hover,
+button#sub:hover,
+button#mul:hover,
+button#div:hover,
+button#enter:hover {
+    background-color: #4752c4;
+}
+
+/* CLEAR button */
+button#clear {
+    grid-column: span 4;
+    background-color: #ff4c4c;
+    color: white;
+    font-weight: bold;
+}
+
+button#clear:hover {
+    background-color: #d93636;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 767px) {
+    main {
+        padding: 1.5rem;
+    }
+
+    main input {
+        font-size: 2.8rem;
+        padding: 1rem;
+    }
+
+    button {
+        padding: 1.2rem;
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 339px) {
+    main {
+        max-width: 90vw;
+    }
+
+    button {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    main input {
+        font-size: 2.2rem;
+    }
+}
